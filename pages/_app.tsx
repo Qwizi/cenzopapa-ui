@@ -20,7 +20,7 @@ function MyApp({Component, pageProps}: AppProps) {
 				<title>Jebzpapy.tk</title>
 			</Head>
 			<Navbar/>
-			<Container fixed>
+			<Container maxWidth="md">
 				<Box
 					mt={10}
 					style={{ alignItems: "center", justifyContent: "center"}}

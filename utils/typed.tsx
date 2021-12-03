@@ -1,9 +1,12 @@
 type Image = {
 	id: number,
 	url: string,
-	posted_at: string,
 	height: number,
-	width: number
+	width: number,
+	posted_at: string,
+	"author": number,
+	"likes": number[],
+	"likes_count": number
 }
 type Data = {
 	count: number,
@@ -12,8 +15,4 @@ type Data = {
 	results: Image[]
 }
 
-type CountData = {
-	count: number
-}
-
-export type {Image, Data, CountData}
+export type {Image, Data}

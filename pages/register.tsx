@@ -7,22 +7,21 @@ const Register = () => {
 	const [password, setPassword] = useState('');
 	const [email, setEmail] = useState('');
 
-	const handleSubmit = (e: any) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 		console.log(e);
 		try {
 			const url = process.env.NEXT_PUBLIC_API_URL
-			const response = axios.post(`${url}/users/`, {
+			const response = await axios.post(`${url}/users/`, {
 				email: email,
 				username: username,
 				password: password
 			})
 			console.log(response.data);
 		} catch(e) {
-			if (e.response) {
-				console.log(e.re )
+			if (axios.isAxiosError(e)) {
+				console.log(e.response);
 			}
-			console.log(e);
 		}
 
 	}
